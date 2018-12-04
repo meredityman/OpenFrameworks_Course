@@ -9,11 +9,10 @@ public:
 	void update();
 	void draw();
 
-	ofColor col;
-
 private:
 	ofImage& img;
 
+	ofColor col;
 	int x;
 	int y;
 };

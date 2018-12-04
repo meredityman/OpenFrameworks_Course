@@ -43,8 +43,6 @@ void ofApp::mouseDragged(int x, int y, int button){
 	for (int i = 0; i < 10; i++) {
 		Spot spot(x + 20 * ofRandomf(), y + 20 * ofRandomf(), img);
 
-		spot.col = ofColor(ofRandomf() * 255, ofRandomf() * 255, ofRandomf() * 255);
-
 		spots.push_back(spot);
 	}
 
