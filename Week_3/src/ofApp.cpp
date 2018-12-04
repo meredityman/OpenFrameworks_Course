@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 	ofSetBackgroundAuto(false);
+
+	img.load("img.jpg");
 }
 //--------------------------------------------------------------
 void ofApp::update(){
@@ -39,11 +41,9 @@ void ofApp::mouseMoved(int x, int y ){
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
 	for (int i = 0; i < 10; i++) {
-		Spot spot;
-		spot.x = x + 20 * ofRandomf();
-		spot.y = y + 20 * ofRandomf();
-		spot.col = ofColor(ofRandomf() * 255, ofRandomf() * 255, ofRandomf() * 255);
+		Spot spot(x + 20 * ofRandomf(), y + 20 * ofRandomf(), img);
 
+		spot.col = ofColor(ofRandomf() * 255, ofRandomf() * 255, ofRandomf() * 255);
 
 		spots.push_back(spot);
 	}

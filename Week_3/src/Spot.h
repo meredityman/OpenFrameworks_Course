@@ -4,12 +4,16 @@
 class Spot
 {
 public:
-	Spot();
+	Spot(int x, int y, ofImage& img);
 
 	void update();
 	void draw();
 
 	ofColor col;
+
+private:
+	ofImage& img;
+
 	int x;
 	int y;
 };
