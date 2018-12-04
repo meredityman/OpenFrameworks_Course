@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Spot.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,27 +22,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		
-		class Spot {
-		public:
-			int x;
-			int y;
-			ofColor col;
-
-			void draw() {
-				ofSetColor(col);
-				ofDrawCircle(x, y, 10);
-			}
-
-			void update() {
-				x += 10 * ofSignedNoise(y, ofGetElapsedTimeMillis() / 100.0);
-				y += 10 * ofSignedNoise(x, -(ofGetElapsedTimeMillis() / 100.0) );
-
-				x = ofClamp(x, 0, ofGetWidth());
-				y = ofClamp(y, 0, ofGetHeight());
-			}
-		};
-
+	
 		vector<Spot> spots;
 
 };
